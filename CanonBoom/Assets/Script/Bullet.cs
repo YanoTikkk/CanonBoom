@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(Vector3.forward);
+        rb.AddForce(Input.mousePosition * stronge);
         
         lifeBullet -= Time.deltaTime;
         if (lifeBullet <= 0)

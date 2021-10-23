@@ -8,13 +8,15 @@ public class AttackRay : MonoBehaviour
     [SerializeField] private Transform pointer;
     private Ray rayAttack;
     private RaycastHit raycastHit;
+    public Vector3 mousePosition;
     [SerializeField] private Vector3 bulletPosition;
     [SerializeField] private GameObject bullet;
     [SerializeField] private Camera cameraMain;
 
     private void Update()
     {
-        Ray ray = cameraMain.ScreenPointToRay(Input.mousePosition);
+        mousePosition = Input.mousePosition;
+        Ray ray = cameraMain.ScreenPointToRay(mousePosition);
         Debug.DrawRay(transform.position, transform.forward *100f,Color.red);
         
         if (Input.GetMouseButtonUp(0))
@@ -24,7 +26,7 @@ public class AttackRay : MonoBehaviour
         
         if (Physics.Raycast(rayAttack,out raycastHit))
         {
-            pointer.position = raycastHit.point;
+            pointer.transform.position = raycastHit.point;
         }
     }
     
