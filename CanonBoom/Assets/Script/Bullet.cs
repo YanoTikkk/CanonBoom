@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float stronge;
     [SerializeField] private float lifeBullet;
     private Rigidbody rb;
-    
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = transform.TransformDirection(Input.mousePosition * 1);
+        rb.AddForce(Vector3.RotateTowards(transform.position,Input.mousePosition, 100f, 100f));
 
         lifeBullet -= Time.deltaTime;
         if (lifeBullet <= 0)

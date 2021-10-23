@@ -12,18 +12,12 @@ public class AttackRay : MonoBehaviour
     private Ray ray;
     private RaycastHit raycastHit;
     private Vector3 mousePosition;
-    private Vector3 transformInstantiate;
-    
     
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            if (Physics.Raycast(ray, out raycastHit))
-            {
-                Instantiate(pointer);
-                pointer.transform.position = raycastHit.point + raycastHit.normal * 0.01f;
-            }
+            setAim();
         }
 
         
@@ -34,11 +28,22 @@ public class AttackRay : MonoBehaviour
 
     }
 
+    private void setAim()
+    {
+        if (Physics.Raycast(ray, out raycastHit))
+        {
+            if (raycastHit.collider == null) return;
+
+            Instantiate(pointer,raycastHit.point,Quaternion.identity);
+        }
+    }
+    
     private void Fire()
     {
         mousePosition = Input.mousePosition; 
         ray = Camera.main.ScreenPointToRay(mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 10f , Color.red, 10f);
-        Instantiate(bullet ,transform.position,Quaternion.FromToRotation(transform.position,pointer.position));
+        Instantiate(bullet ,transform.position,Quaternion.FromToRotation(transform.position,raycastHit.point));
+        Debug.Log(bullet.transform.position);
     }
 }
