@@ -151,7 +151,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138850634}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -264,7 +264,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504595621}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -377,7 +377,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514693197}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -583,7 +583,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858170151}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -696,7 +696,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932671576}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -880,63 +880,6 @@ MonoBehaviour:
   pointer: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
   bullet: {fileID: 5393186630735315080, guid: 84f9e3d5d07f54162b93bf103703290a, type: 3}
   cameraMain: {fileID: 963194227}
---- !u!1001 &1198397501
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.7861362
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.9847994
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6950534896999710736, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_Name
-      value: Aim
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
 --- !u!1 &1205332667
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +908,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205332667}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1175,7 +1118,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820071238}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1288,7 +1231,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925406859}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1

@@ -54,6 +54,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -105,7 +106,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5393186630735315080}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -125,5 +126,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915aa621a1f9e4e0aa9624bf62591bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stronge: 10
+  stronge: 1
   lifeBullet: 5
