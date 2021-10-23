@@ -6,28 +6,31 @@ using UnityEngine;
 public class AttackRay : MonoBehaviour
 {
     [SerializeField] private Transform pointer;
-    private Ray rayAttack;
-    private RaycastHit raycastHit;
-    public Vector3 mousePosition;
-    [SerializeField] private Vector3 bulletPosition;
     [SerializeField] private GameObject bullet;
     [SerializeField] private Camera cameraMain;
-
+    private Ray rayAttack;
+    private RaycastHit raycastHit;
+    private Vector3 mousePosition;
+    private Vector3 transformInstantiate;
+    
+    
     private void Update()
     {
-        mousePosition = Input.mousePosition;
-        Ray ray = cameraMain.ScreenPointToRay(mousePosition);
-        Debug.DrawRay(transform.position, transform.forward *100f,Color.red);
-        
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(bullet , bulletPosition , new Quaternion(0,0,0,0));
+            mousePosition = Input.mousePosition;
+            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+            Debug.DrawRay(ray.origin, ray.direction * 10f , Color.red, 10f);
+
+            if (Input.GetMouseButtonUp(0))
+             {
+                Instantiate(bullet , transformInstantiate , new Quaternion(0,0,0,0));
+             }
         }
-        
-        if (Physics.Raycast(rayAttack,out raycastHit))
+        if (Physics.Raycast(rayAttack, out raycastHit))
         {
-            pointer.transform.position = raycastHit.point;
+            Debug.Log("good");
+            pointer.position = raycastHit.point;
         }
     }
-    
 }
