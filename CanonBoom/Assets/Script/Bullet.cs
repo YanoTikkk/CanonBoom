@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -16,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(Vector3.forward , ForceMode.Impulse);
+        rb.AddForce(Vector3.forward);
         
         lifeBullet -= Time.deltaTime;
         if (lifeBullet <= 0)
