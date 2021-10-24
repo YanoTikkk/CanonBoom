@@ -7,12 +7,12 @@ public class TimeBody : MonoBehaviour
 {
     public bool isRewinding = false;
 
-    private List<Vector3> positions;
+    private List<PointInTime> pointInTimes;
     private Rigidbody rb;
 
     private void Start()
     {
-        positions = new List<Vector3>();
+        pointInTimes = new List<PointInTime>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -20,12 +20,14 @@ public class TimeBody : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            startRewind();
-        }
-
-        if (Input.GetMouseButtonUp(1))
-        {
-            stopRewind();
+            if (pointInTimes.Count > 0)
+            {
+                startRewind();
+            }
+            else
+            {
+                startRewind();
+            }
         }
     }
 
@@ -43,10 +45,12 @@ public class TimeBody : MonoBehaviour
 
     private void rewinding()
     {
-        if (positions.Count > 0)
+        if (pointInTimes.Count > 0)
         {
-            transform.position = positions[0];
-            positions.RemoveAt(0);
+            PointInTime pointInTime = pointInTimes[0];
+            transform.position = pointInTime.positon;
+            transform.rotation = pointInTime.rotation;
+            pointInTimes.RemoveAt(0);
         }
         else
         {
@@ -56,7 +60,7 @@ public class TimeBody : MonoBehaviour
 
     private void record()
     {
-        positions.Insert(0,transform.position);
+        pointInTimes.Insert(0,new PointInTime(transform.position,transform.rotation));
     }
 
     public void startRewind()

@@ -322,6 +322,7 @@
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/VSSettingsProvider.ref.dll"
 "Assets/Script/AttackRay.cs"
 "Assets/Script/Bullet.cs"
+"Assets/Script/PointInTime.cs"
 "Assets/Script/TimeBody.cs"
 -langversion:8.0
 

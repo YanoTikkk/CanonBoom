@@ -42,8 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\Bullet.cs" />
-     <Compile Include="Assets\Script\AttackRay.cs" />
      <Compile Include="Assets\Script\TimeBody.cs" />
+     <Compile Include="Assets\Script\AttackRay.cs" />
+     <Compile Include="Assets\Script\PointInTime.cs" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.1.23f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
