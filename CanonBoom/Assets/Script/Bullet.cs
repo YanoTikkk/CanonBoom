@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,8 +19,6 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(Vector3.RotateTowards(transform.position,Input.mousePosition, 100f, 100f));
-
         lifeBullet -= Time.deltaTime;
         if (lifeBullet <= 0)
         {

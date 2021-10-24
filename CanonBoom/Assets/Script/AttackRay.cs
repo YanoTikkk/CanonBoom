@@ -9,7 +9,8 @@ public class AttackRay : MonoBehaviour
     [SerializeField] private Transform pointer;
     [SerializeField] private GameObject bullet;
     [SerializeField] private Camera cameraMain;
-    private Ray ray;
+    public Ray ray;
+    
     private RaycastHit raycastHit;
     private Vector3 mousePosition;
     
@@ -38,12 +39,13 @@ public class AttackRay : MonoBehaviour
         }
     }
     
-    private void Fire()
+    public void Fire()
     {
         mousePosition = Input.mousePosition; 
         ray = Camera.main.ScreenPointToRay(mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 10f , Color.red, 10f);
-        Instantiate(bullet ,transform.position,Quaternion.FromToRotation(transform.position,raycastHit.point));
-        Debug.Log(bullet.transform.position);
+        var bullets = Instantiate(bullet ,ray.origin,Quaternion.FromToRotation(ray.origin,raycastHit.point));
+        var rb = bullets.GetComponent<Rigidbody>();
+        rb.AddForce((raycastHit.point-transform.position).normalized * 1000f);
     }
 }
