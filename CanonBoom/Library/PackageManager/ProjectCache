@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637706795860000000
+      ticks: 637707002500000000
     m_Hash: 347916568
   m_LockFileStatus:
     m_FilePath: /Users/dimayankovich/CanonBoom/CanonBoom/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637706795860000000
+      ticks: 637707002500000000
     m_Hash: 52123023
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
