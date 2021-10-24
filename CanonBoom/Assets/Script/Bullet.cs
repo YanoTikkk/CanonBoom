@@ -8,16 +8,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float stronge;
     [SerializeField] private float lifeBullet;
-    private Rigidbody rb;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    private void FixedUpdate()
+    private void Update()
     {
         lifeBullet -= Time.deltaTime;
         if (lifeBullet <= 0)

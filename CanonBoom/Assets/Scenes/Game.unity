@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -878,8 +878,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointer: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-  bullet: {fileID: 5393186630735315080, guid: 84f9e3d5d07f54162b93bf103703290a, type: 3}
+  gameObjectBullet: {fileID: 5393186630735315080, guid: 84f9e3d5d07f54162b93bf103703290a, type: 3}
   cameraMain: {fileID: 963194227}
+  force: 3000
 --- !u!1 &1205332667
 GameObject:
   m_ObjectHideFlags: 0

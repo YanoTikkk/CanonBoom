@@ -7,16 +7,21 @@ using UnityEngine;
 public class AttackRay : MonoBehaviour
 {
     [SerializeField] private Transform pointer;
-    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject gameObjectBullet;
     [SerializeField] private Camera cameraMain;
-    public Ray ray;
-    
+    [SerializeField] private float force;
+    private Ray ray;
+    private Ray newRay;
+    private Vector3 relativePos;
     private RaycastHit raycastHit;
     private Vector3 mousePosition;
     
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        mousePosition = Input.mousePosition; 
+        ray = Camera.main.ScreenPointToRay(mousePosition);
+
+        if (Input.GetMouseButtonDown(0))
         {
             setAim();
         }
@@ -25,6 +30,7 @@ public class AttackRay : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             Fire();
+            Destroy(GameObject.Find("Aim(Clone)"),0.1f);
         }
 
     }
@@ -33,19 +39,21 @@ public class AttackRay : MonoBehaviour
     {
         if (Physics.Raycast(ray, out raycastHit))
         {
-            if (raycastHit.collider == null) return;
-
-            Instantiate(pointer,raycastHit.point,Quaternion.identity);
+            var point = Instantiate(pointer,raycastHit.point,Quaternion.identity);
+            
+            if (Input.GetMouseButton(0))
+            {
+                point.position = raycastHit.point;
+            }
+            
         }
     }
     
-    public void Fire()
+    private void Fire()
     {
-        mousePosition = Input.mousePosition; 
-        ray = Camera.main.ScreenPointToRay(mousePosition);
-        Debug.DrawRay(ray.origin, ray.direction * 10f , Color.red, 10f);
-        var bullets = Instantiate(bullet ,ray.origin,Quaternion.FromToRotation(ray.origin,raycastHit.point));
+        relativePos = raycastHit.point - transform.position;
+        var bullets = Instantiate(gameObjectBullet ,ray.origin,Quaternion.LookRotation(relativePos));
         var rb = bullets.GetComponent<Rigidbody>();
-        rb.AddForce((raycastHit.point-transform.position).normalized * 1000f);
+        rb.AddForce((relativePos).normalized * force);
     }
 }

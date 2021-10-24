@@ -1,17 +1,17 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Aim : MonoBehaviour
 {
-    private void Start()
-    {
-        Debug.Log("Hello");
-    }
+    [SerializeField] private float lifeAim;
 
-    void Update()
+    private void Update()
     {
-        Destroy(gameObject,15f);
+       // lifeAim -= Time.deltaTime;
+       // if (lifeAim <= 0)
+      //  {
+      //      Destroy(gameObject);
+      //  }
     }
 }
