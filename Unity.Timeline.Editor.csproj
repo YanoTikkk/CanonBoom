@@ -62,8 +62,8 @@
      <Compile Include="Library\PackageCache\com.unity.timeline@1.5.6\Editor\Window\TimelineWindow_Duration.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.5.6\Editor\Tooltip.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.5.6\Editor\Manipulators\Sequence\SelectAndMoveItem.cs" />
-     <Compile Include="Library\PackageCache\com.unity.timeline@1.5.6\Editor\Items\ItemsGroup.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.5.6\Editor\Utilities\Scopes\LabelWidthScope.cs" />
+     <Compile Include="Library\PackageCache\com.unity.timeline@1.5.6\Editor\Items\ItemsGroup.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.5.6\Editor\TimelineUtility.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.5.6\Editor\Signals\SignalEmitterEditor.cs" />
      <Compile Include="Library\PackageCache\com.unity.timeline@1.5.6\Editor\State\ISequenceState.cs" />
@@ -553,28 +553,28 @@
      <HintPath>/Applications/Unity/Hub/Editor/2021.1.23f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
-     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/CanonBoom/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Antlr3.Runtime">
-     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/CanonBoom/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.YamlDotNet">
-     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/CanonBoom/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll</HintPath>
+     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.IonicZip">
-     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/CanonBoom/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll</HintPath>
+     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll</HintPath>
      </Reference>
      <Reference Include="log4netPlastic">
-     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/CanonBoom/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/CanonBoom/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="unityplastic">
-     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/CanonBoom/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
-     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/CanonBoom/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+     <HintPath>/Users/dimayankovich/Desktop/Unity Project/CanonBoom/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>/Applications/Unity/Hub/Editor/2021.1.23f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

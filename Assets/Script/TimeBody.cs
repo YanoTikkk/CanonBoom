@@ -16,11 +16,9 @@ public class TimeBody : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    public void onButtomDown()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (pointInTimes.Count > 0)
+        if (pointInTimes.Count > 0)
             {
                 startRewind();
             }
@@ -28,7 +26,11 @@ public class TimeBody : MonoBehaviour
             {
                 startRewind();
             }
-        }
+    }
+    
+    private void Update()
+    {
+        // onButtomDown();
     }
 
     private void FixedUpdate()
