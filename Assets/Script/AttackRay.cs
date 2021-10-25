@@ -28,8 +28,11 @@ public class AttackRay : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            Fire();
-            pointer.position = mousePosition;
+            if (Physics.Raycast(ray, out raycastHit))
+            {
+                Fire();
+                pointer.position = mousePosition;
+            }
         }
     }
 

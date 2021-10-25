@@ -15,24 +15,7 @@ public class TimeBody : MonoBehaviour
         pointInTimes = new List<PointInTime>();
         rb = GetComponent<Rigidbody>();
     }
-
-    public void onButtomDown()
-    {
-        if (pointInTimes.Count > 0)
-            {
-                startRewind();
-            }
-            else
-            {
-                startRewind();
-            }
-    }
     
-    private void Update()
-    {
-        // onButtomDown();
-    }
-
     private void FixedUpdate()
     {
         if (isRewinding)
@@ -75,5 +58,18 @@ public class TimeBody : MonoBehaviour
     {
         rb.isKinematic = false;
         isRewinding = false;
+    }
+    public void onButtomDown()
+    {
+        if (pointInTimes.Count > 0)
+        {
+            Debug.Log("True REWIND");
+            startRewind();
+        }
+        else
+        {
+            Debug.Log("True STOP");
+            stopRewind();
+        }
     }
 }
