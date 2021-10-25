@@ -7,13 +7,15 @@ using UnityEngine.EventSystems;
 
 public class AttackRay : MonoBehaviour
 {
-    [SerializeField] private Transform _pointer;
-    [SerializeField] private GameObject _gameObjectBullet;
-    [SerializeField] private float _force;
-    private Ray _ray;
-    private Vector3 _relativePos;
-    private RaycastHit _raycastHit;
-    private Vector3 _mousePosition;
+    [SerializeField] private Transform _pointer = null;
+    [SerializeField] private Bullet bulletPrefab = null;
+    [SerializeField] private float _force = 0f;
+    
+    private Ray _ray; // почитать
+    private Vector3 _relativePos = Vector3.zero;
+    private RaycastHit _raycastHit; // почитать
+    private Vector3 _mousePosition = Vector3.zero;
+
     
     private void Update()
     {
@@ -27,8 +29,10 @@ public class AttackRay : MonoBehaviour
                 _pointer.position = _raycastHit.point;
             }
         }
+        
         if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
         {
+            
             if (Physics.Raycast(_ray, out _raycastHit))
             {
                 Fire();
@@ -36,13 +40,22 @@ public class AttackRay : MonoBehaviour
             }
         }
     }
-
-
+    
+    
     private void Fire()
     {
         _relativePos = _raycastHit.point - transform.position;
-        var bullets = Instantiate(_gameObjectBullet, _ray.origin, Quaternion.LookRotation(_relativePos));
-        var rb = bullets.GetComponent<Rigidbody>();
-        rb.AddForce((_relativePos).normalized * _force);
+        Bullet bullet = Instantiate(bulletPrefab, _ray.origin, Quaternion.LookRotation(_relativePos));
+        bullet.AddForce((_relativePos).normalized * _force);
+    }
+
+    class Bullet : MonoBehaviour // вынести в другой файл
+    {
+        [SerializeField] private Rigidbody rigidbody;
+
+        public void AddForce(Vector3 force)
+        {
+            rigidbody.AddForce(force);
+        }
     }
 }

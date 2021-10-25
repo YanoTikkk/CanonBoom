@@ -7,14 +7,16 @@ using UnityEngine;
 public class TimeBody : MonoBehaviour
 {
     public bool isRewinding = false;
-    private List<PointInTime> _pointInTimes;
-    private Rigidbody _rb;
+    private List<PointInTime> _pointInTimes = null;
+    private Rigidbody _rb = null;
 
+    
     private void Start()
     {
         _pointInTimes = new List<PointInTime>();
         _rb = GetComponent<Rigidbody>();
     }
+    
     
     private void Update()
     {
@@ -26,10 +28,10 @@ public class TimeBody : MonoBehaviour
         if(!Mathf.Approximately(_rb.velocity.y, 0) && !isRewinding) 
         {
             Record();
-            Debug.Log("Ha ha ha)))");
         }
     }
 
+    
     private async void Rewinding()
     {
         while (_pointInTimes.Count > 0)
@@ -43,23 +45,28 @@ public class TimeBody : MonoBehaviour
         StopRewind();
     }
 
+    
     private void Record()
     {
         _pointInTimes.Insert(0,new PointInTime(transform.position,transform.rotation));
     }
 
-    public void StartRewind()
+    
+    private void StartRewind()
     {
         _rb.isKinematic = true;
         isRewinding = true;
     }
 
-    public void StopRewind()
+    
+    private void StopRewind()
     {
         _rb.isKinematic = false;
         isRewinding = false;
     }
-    public void onButtomDown()
+    
+    
+    public void OnButtomDown()
     {
         if (_pointInTimes.Count > 0 && !isRewinding)
         {
