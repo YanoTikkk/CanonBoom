@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -249,7 +249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d496f24e0e2034a5580d5a7f1f41d176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
 --- !u!1 &504595621
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d496f24e0e2034a5580d5a7f1f41d176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
 --- !u!1 &514693197
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d496f24e0e2034a5580d5a7f1f41d176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d496f24e0e2034a5580d5a7f1f41d176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
 --- !u!1 &874479208
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d496f24e0e2034a5580d5a7f1f41d176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,9 +1080,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd54a2a75d30548a2925b21510e62502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointer: {fileID: 1943417619}
-  _gameObjectBullet: {fileID: 5393186630735315080, guid: 84f9e3d5d07f54162b93bf103703290a, type: 3}
-  _force: 4000
+  pointer: {fileID: 1131849527}
+  bulletPrefab: {fileID: 921514850, guid: 84f9e3d5d07f54162b93bf103703290a, type: 3}
+  force: 3500
+--- !u!4 &1131849527 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
+  m_PrefabInstance: {fileID: 1840507681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1205332667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d496f24e0e2034a5580d5a7f1f41d176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
 --- !u!1 &1269713041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1299,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 138850640}
         m_TargetAssemblyTypeName: TimeBody, Assembly-CSharp
-        m_MethodName: onButtomDown
+        m_MethodName: OnButtomDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1312,7 +1311,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1820071244}
         m_TargetAssemblyTypeName: TimeBody, Assembly-CSharp
-        m_MethodName: onButtomDown
+        m_MethodName: OnButtomDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1324,7 +1323,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1925406865}
         m_TargetAssemblyTypeName: TimeBody, Assembly-CSharp
-        m_MethodName: onButtomDown
+        m_MethodName: OnButtomDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1336,7 +1335,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 858170157}
         m_TargetAssemblyTypeName: TimeBody, Assembly-CSharp
-        m_MethodName: onButtomDown
+        m_MethodName: OnButtomDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1348,7 +1347,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 504595627}
         m_TargetAssemblyTypeName: TimeBody, Assembly-CSharp
-        m_MethodName: onButtomDown
+        m_MethodName: OnButtomDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1360,7 +1359,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 514693203}
         m_TargetAssemblyTypeName: TimeBody, Assembly-CSharp
-        m_MethodName: onButtomDown
+        m_MethodName: OnButtomDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1372,7 +1371,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 932671582}
         m_TargetAssemblyTypeName: TimeBody, Assembly-CSharp
-        m_MethodName: onButtomDown
+        m_MethodName: OnButtomDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1384,7 +1383,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1205332673}
         m_TargetAssemblyTypeName: TimeBody, Assembly-CSharp
-        m_MethodName: onButtomDown
+        m_MethodName: OnButtomDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1800,7 +1799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d496f24e0e2034a5580d5a7f1f41d176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
 --- !u!1001 &1840507681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1814,15 +1812,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.62
+      value: 0.031559
       objectReference: {fileID: 0}
     - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.99
+      value: 3.0177
       objectReference: {fileID: 0}
     - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -34.26
+      value: -9.9987
       objectReference: {fileID: 0}
     - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1850,10 +1848,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6871346071719063583, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6950534896999710736, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
@@ -1988,9 +1982,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d496f24e0e2034a5580d5a7f1f41d176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRewinding: 0
---- !u!4 &1943417619 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 232163793382272552, guid: eec87fb78e1f9466fb2353b1eb0d83bd, type: 3}
-  m_PrefabInstance: {fileID: 1840507681}
-  m_PrefabAsset: {fileID: 0}

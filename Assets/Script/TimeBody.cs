@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class TimeBody : MonoBehaviour
 {
-    public bool isRewinding = false;
-    private List<PointInTime> _pointInTimes = null;
-    private Rigidbody _rb = null;
+    private bool isRewinding = false;
+    private List<PointInTime> pointInTimes = null;
+    private Rigidbody rb = null;
 
     
     private void Start()
     {
-        _pointInTimes = new List<PointInTime>();
-        _rb = GetComponent<Rigidbody>();
+        pointInTimes = new List<PointInTime>();
+        rb = GetComponent<Rigidbody>();
     }
     
     
@@ -25,7 +25,7 @@ public class TimeBody : MonoBehaviour
             return;
         }
 
-        if(!Mathf.Approximately(_rb.velocity.y, 0) && !isRewinding) 
+        if(!Mathf.Approximately(rb.velocity.y, 0) && !isRewinding) 
         {
             Record();
         }
@@ -34,12 +34,12 @@ public class TimeBody : MonoBehaviour
     
     private async void Rewinding()
     {
-        while (_pointInTimes.Count > 0)
+        while (pointInTimes.Count > 0)
         {
-            PointInTime pointInTime = _pointInTimes[0];
+            PointInTime pointInTime = pointInTimes[0];
             transform.position = pointInTime.positon;
             transform.rotation = pointInTime.rotation;
-            _pointInTimes.RemoveAt(0);
+            pointInTimes.RemoveAt(0);
             await Task.Yield();
         }
         StopRewind();
@@ -48,27 +48,27 @@ public class TimeBody : MonoBehaviour
     
     private void Record()
     {
-        _pointInTimes.Insert(0,new PointInTime(transform.position,transform.rotation));
+        pointInTimes.Insert(0,new PointInTime(transform.position,transform.rotation));
     }
 
     
     private void StartRewind()
     {
-        _rb.isKinematic = true;
+        rb.isKinematic = true;
         isRewinding = true;
     }
 
     
     private void StopRewind()
     {
-        _rb.isKinematic = false;
+        rb.isKinematic = false;
         isRewinding = false;
     }
     
     
     public void OnButtomDown()
     {
-        if (_pointInTimes.Count > 0 && !isRewinding)
+        if (pointInTimes.Count > 0 && !isRewinding)
         {
             Debug.Log("True REWIND");
             StartRewind();
