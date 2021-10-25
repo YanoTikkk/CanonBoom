@@ -3,35 +3,36 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class AttackRay : MonoBehaviour
 {
-    [SerializeField] private Transform pointer;
-    [SerializeField] private GameObject gameObjectBullet;
-    [SerializeField] private float force;
-    private Ray ray;
-    private Vector3 relativePos;
-    private RaycastHit raycastHit;
-    private Vector3 mousePosition;
+    [SerializeField] private Transform _pointer;
+    [SerializeField] private GameObject _gameObjectBullet;
+    [SerializeField] private float _force;
+    private Ray _ray;
+    private Vector3 _relativePos;
+    private RaycastHit _raycastHit;
+    private Vector3 _mousePosition;
     
     private void Update()
     {
-        mousePosition = Input.mousePosition;
-        ray = Camera.main.ScreenPointToRay(mousePosition);
+        _mousePosition = Input.mousePosition;
+        _ray = Camera.main.ScreenPointToRay(_mousePosition);
         
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            if (Physics.Raycast(ray, out raycastHit))
+            if (Physics.Raycast(_ray, out _raycastHit))
             {
-                pointer.position = raycastHit.point;
+                _pointer.position = _raycastHit.point;
             }
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            if (Physics.Raycast(ray, out raycastHit))
+            if (Physics.Raycast(_ray, out _raycastHit))
             {
                 Fire();
-                pointer.position = mousePosition;
+                _pointer.position = _mousePosition;
             }
         }
     }
@@ -39,9 +40,9 @@ public class AttackRay : MonoBehaviour
 
     private void Fire()
     {
-        relativePos = raycastHit.point - transform.position;
-        var bullets = Instantiate(gameObjectBullet, ray.origin, Quaternion.LookRotation(relativePos));
+        _relativePos = _raycastHit.point - transform.position;
+        var bullets = Instantiate(_gameObjectBullet, _ray.origin, Quaternion.LookRotation(_relativePos));
         var rb = bullets.GetComponent<Rigidbody>();
-        rb.AddForce((relativePos).normalized * force);
+        rb.AddForce((_relativePos).normalized * _force);
     }
 }
